@@ -171,17 +171,20 @@ class Swiper extends Component {
       else isSwipingTop = true
     }
 
-    if (isSwipingRight) {
-      this.setState({ labelType: LABEL_TYPES.RIGHT })
-    } else if (isSwipingLeft) {
-      this.setState({ labelType: LABEL_TYPES.LEFT })
-    } else if (isSwipingTop) {
-      this.setState({ labelType: LABEL_TYPES.TOP })
-    } else if (isSwipingBottom) {
-      this.setState({ labelType: LABEL_TYPES.BOTTOM })
-    } else {
-      this.setState({ labelType: LABEL_TYPES.NONE })
+    if(this.props.overlayLabels){
+      if (isSwipingRight) {
+        this.setState({ labelType: LABEL_TYPES.RIGHT })
+      } else if (isSwipingLeft) {
+        this.setState({ labelType: LABEL_TYPES.LEFT })
+      } else if (isSwipingTop) {
+        this.setState({ labelType: LABEL_TYPES.TOP })
+      } else if (isSwipingBottom) {
+        this.setState({ labelType: LABEL_TYPES.BOTTOM })
+      } else {
+        this.setState({ labelType: LABEL_TYPES.NONE })
+      }
     }
+
 
     const { onTapCardDeadZone } = this.props
     if (
